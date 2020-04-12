@@ -4,7 +4,7 @@ public class Item {
 
 
     // Default Constructor
-    Item (String name, int weight){
+    public Item(){
         this.name = name;
         this.weight = weight;
     }
