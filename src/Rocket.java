@@ -6,19 +6,28 @@ public class Rocket implements SpaceShip{
     double chanceOfLaunchExplosion;
     double chanceOfLandingCrash;
 
-   public void setCost(int cost){
+    public void setCost(int cost) {
        this.cost = cost;
    }
+
+   public void setWeight(int weight){
+        this.weight = weight;
+   }
+
     public void setCurrentWeight(int currentWeight){
         this.currentWeight = currentWeight;
     }
 
-    public void setMaxWeight(){
+    public void setMaxWeight(int maxWeight){
         this.maxWeight = currentWeight;
     }
 
     public int getCost(){
        return cost;
+    }
+
+    public int getWeight(){
+        return weight;
     }
 
     public int getCurrentWeight() {
@@ -48,6 +57,5 @@ public class Rocket implements SpaceShip{
     public final void carry(Item item) {
         currentWeight += item.getWeight();
         setCurrentWeight(currentWeight);
-
     }
 }
