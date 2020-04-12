@@ -19,7 +19,7 @@ public class Rocket implements SpaceShip{
     }
 
     public void setMaxWeight(int maxWeight){
-        this.maxWeight = currentWeight;
+        this.maxWeight = maxWeight;
     }
 
     public int getCost(){

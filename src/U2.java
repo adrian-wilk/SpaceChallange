@@ -1,3 +1,5 @@
+import static java.lang.Math.random;
+
 public class U2 extends Rocket {
 
     public U2(){
@@ -17,14 +19,13 @@ public class U2 extends Rocket {
     @Override
     public boolean launch() {
         double percentChance = 0.04;
-        double higherPower = Math.random();
-        chanceOfLaunchExplosion = percentChance * (((double) getCurrentWeight()-getWeight())/(getMaxWeight()-getWeight()));
+        double higherPower = random();
+        chanceOfLaunchExplosion = percentChance * ((double) getCurrentWeight()-getWeight())/(getMaxWeight()-getWeight());
         if(chanceOfLaunchExplosion < higherPower){
-            System.out.println("The launch sequence has finished successfully.");
             return true;
         }
         else{
-            System.out.println("The U1 rocket has exploded during the launching sequence.");
+            System.out.println("The U2 rocket has exploded during the launching sequence.");
             return false;
         }
     }
@@ -32,14 +33,13 @@ public class U2 extends Rocket {
     @Override
     public boolean land() {
         double percentChance = 0.08;
-        double higherPower = Math.random();
-        chanceOfLandingCrash = percentChance * (((double) getCurrentWeight() - getWeight())/(getMaxWeight()-getWeight()));
+        double higherPower = random();
+        chanceOfLandingCrash = percentChance * ((double) getCurrentWeight() - getWeight())/(getMaxWeight()-getWeight());
         if(chanceOfLandingCrash < higherPower){
-            System.out.println("The landing sequence has finished successfully.");
             return true;
         }
         else{
-            System.out.println("The U1 rocket has crashed during the landing sequence.");
+            System.out.println("The U2 rocket has crashed during the landing sequence.");
             return false;
         }
     }

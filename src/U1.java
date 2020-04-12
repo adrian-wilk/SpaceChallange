@@ -1,3 +1,5 @@
+import static java.lang.Math.*;
+
 public class U1 extends Rocket {
 
     public U1(){
@@ -17,10 +19,11 @@ public class U1 extends Rocket {
     @Override
     public boolean launch() {
         double percentChance = 0.05;
-        double higherPower = Math.random();
-                chanceOfLaunchExplosion = percentChance * (((double) getCurrentWeight()-getWeight())/(getMaxWeight()-getWeight()));
+        double higherPower = random();
+        double cargoWeight = getCurrentWeight() - getWeight();
+        double cargoLimit = getMaxWeight() - getWeight();
+                chanceOfLaunchExplosion = percentChance * (double) cargoWeight/cargoLimit;
                 if(chanceOfLaunchExplosion < higherPower){
-                    System.out.println("The launch sequence has finished successfully.");
                     return true;
                 }
                 else{
@@ -32,10 +35,9 @@ public class U1 extends Rocket {
     @Override
     public boolean land() {
         double percentChance = 0.01;
-        double higherPower = Math.random();
-        chanceOfLandingCrash = percentChance * (((double) getCurrentWeight() - getWeight())/(getMaxWeight()-getWeight()));
+        double higherPower = random();
+        chanceOfLandingCrash = percentChance * ((double) getCurrentWeight() - getWeight())/(getMaxWeight()-getWeight());
         if(chanceOfLandingCrash < higherPower){
-            System.out.println("The landing sequence has finished successfully.");
             return true;
         }
         else{
